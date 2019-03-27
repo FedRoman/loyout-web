@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro');
+:root{
+   --black-color:black;
+   --blue-hover:blue;
+}
+
+body {
+    max-width: 980px; /*задаю ширину максимальну ширину боді*/
+    margin: auto;
+    
+}
+h1, h2, h3, p, div, nav, li , ul{
+    margin: 0;
+    padding: 0;
+}
+header .navy img{
+    margin-top: 20px;
+}
+header .top-menu {/*ul задаємо гнучкість блоку ,рівні відстані між контентом і 
+перенос у разі не вміщеня на сторінку*/
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+header .top-menu li { /*виставляємо li горизонтально 
+і забераємо крапку*/
+    display: inline;
+    list-style-type: none;
+}
+header .top-menu li a {
+    text-decoration: none;/*забераємо 
+    підкреслення в а і все великими буквами*/
+    text-transform: uppercase;
+    color:var(--black-color);
+    
+}
+header .top-menu li a:hover {
+    color:var(--blue-hover);/*при наведені курсору загаловки знінять колір*/
+    text-decoration:underline;
+    
+}
+.size_for_h1{
+    font-size: 2rem;
+}
+.float-left{
+    float:left;
+    padding-right: 10px;
+}
+@media (min-width: 550px) {/*при екрані від 550рх меню розташовуеться вертикально з рівномірним відступом,
+призменьшені екрана заголовки будуть переноситись*/
+    header nav {
+        display: flex;
+        align-items: center;/*вирівнюємо нав по вертикалі*/
+    }
+    
+    header nav .top-menu {
+        flex: 1;
+    }
+}
+               /*-------main----------*/
+section .about_me{
+    display: flex;
+    flex-wrap:wrap;
+}
+.about_me p{
+    padding:10px;
+}
+.service h2{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.service-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+ .service-list li{
+    display: inline;
+    list-style-type: none;
+    border:1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    
+}
+.service-list li a {
+    text-decoration: none; 
+    text-transform: uppercase;
+    color:var(--black-color);
+}
+.profile{
+    margin-top: 15px;
+}
+.profile img {
+    display: block;
+    width: 100%;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 32px;
+    flex-wrap:wrap;
+}
+
+.profile img {
+    display:block;
+    width:100%;
+}
+@media (min-width: 480px) {
+    .profile {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+    }
+}
+
+
+@media (min-width: 660px) {
+    .profile {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 980px) {
+    .profile {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
